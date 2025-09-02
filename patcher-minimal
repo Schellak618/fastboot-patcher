@@ -25,7 +25,7 @@ fi
 # edit raw image
 echo "editing image..."
 off=$(grep -ab -o SEANDROIDENFORCE raw.img | tail -n 1 | cut -d : -f 1)
-dd if=raw.img of=header.img bs=4k count=$off iflag=count_bytes &&
+dd if=raw.img of=header.img bs=4k count=$off iflag=count_bytes
 echo "made edit to image!"
 echo "running file check..."
 existance $csd/header.img "echo finished!" "echo file check on header.img failed && exit 1"
